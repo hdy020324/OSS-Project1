@@ -454,7 +454,7 @@ double doppler_I(int cho) {
 
 	if (cho == 1) {
 		printf("\n");
-		pritnf("v = fλ\n\n");
+		printf("v = fλ\n\n");
 		printf("v :  속도, f : 진동수, λ : 파장\n\n");
 		printf(" f, λ 순으로 입력하시오 : ");
 		scanf_s("%lf %lf", &f, &λ);
@@ -462,7 +462,7 @@ double doppler_I(int cho) {
 	}
 	else if (cho == 2) {
 		printf("\n");
-		pritnf("f = v / λ\n\n");
+		printf("f = v / λ\n\n");
 		printf("f : 진동수, v :  속도, λ : 파장\n\n");
 		printf(" v, λ순으로 입력하시오 : ");
 		scanf_s("%lf %lf", &v, &λ);
@@ -500,7 +500,7 @@ double mirror_lens(int cho) {
 		printf("\n");
 		printf("1   1   1 \n");
 		printf("- + - = -  \n");
-		pritnf("a   b   f\n\n");
+		printf("a   b   f\n\n");
 		printf("a : 물체에서 거울까지의 거리 \n");
 		printf("b : 거울에서 상까지의 거리 (상이 거울앞에 있을때 (+),뒤에 있을 때 (-)), λ : 파장\n");
 		printf("f : 거울의 초점 거리\n\n");
@@ -512,7 +512,7 @@ double mirror_lens(int cho) {
 		printf("\n");
 		printf("    b \n");
 		printf("m = -  \n");
-		pritnf("    a\n\n");
+		printf("    a\n\n");
 		printf("a : 물체에서 거울까지의 거리 \n");
 		printf("b : 거울에서 상까지의 거리 (상이 거울앞에 있을때 (+),뒤에 있을 때 (-)), λ : 파장\n");
 		printf("f : 배율\n\n");
@@ -530,7 +530,7 @@ double ew_l_p(int cho) {
 
 	if (cho == 1) {
 		printf("\n");
-		pritnf("I = I0cos²θ\n\n");
+		printf("I = I0cos²θ\n\n");
 		printf("I : 빛의 밝기, I0 : 초기 빛의 세기, θ : 초기 빛의 편광 방향과 편광판의 편광축 사이의 각의 크기\n\n");
 		printf("I0, θ 순으로 입력하시오 : ");
 		scanf_s("%lf %lf", &I0, &θ);
@@ -540,7 +540,7 @@ double ew_l_p(int cho) {
 		printf("\n");
 		printf("        1\n");
 		printf("f = ---------\n");
-		pritnf("    2π√(LC)\n\n");
+		printf("    2π√(LC)\n\n");
 		printf("f : 진동수, L : 코일, C : 축전기\n\n");
 		printf("L, C 순으로 입력하시오 : ");
 		scanf_s("%lf %lf", &L, &C);
