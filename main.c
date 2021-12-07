@@ -1,5 +1,7 @@
 #include<stdio.h>
+#define _USE_MATH_DEFINES
 #include<math.h>
+
 
 double Vertical_upward_movement(int cho);
 double parabolic_motion(int cho);
@@ -8,15 +10,17 @@ double heat(int cho);
 double wave_of_principle(int cho);
 double wave_rbdi(int cho);
 double doppler_I(int cho);
+double mirror_lens(int cho);
 
 void sub2_unit1();
 void sub2_unit3();
 
-//² Δ
+
 
 int main() {
 	int subject;
-	int unit1, unit2;
+	int unit1;
+	int unit2 = 0;
 	int choice;
 	int cho;
 
@@ -54,7 +58,6 @@ int main() {
 		scanf_s("%d", &unit2);
 	}
 
-
 	if (unit2 == 1) {
 		sub2_unit1();
 	}
@@ -67,6 +70,160 @@ int main() {
 
 
 	return 0;
+}
+
+
+//물리2 1단원
+void sub2_unit1() {
+	int choice;
+	int cho;
+
+	printf("\n");
+	printf("\n");
+	printf("======== 공식 선택 ========\n");
+	printf("\n");
+	printf("1. 연직상방운동\n");
+	printf("2. 포물선 운동\n");
+	printf("3. 관성력\n");
+	printf("4. 열\n");
+	printf("\n");
+	printf("선택지를 고르시오 : ");
+	scanf_s("%d", &choice);
+
+	if (choice == 1) {
+
+		printf("1. V는? \n");
+		printf("2. S는? \n");
+		printf("3. V^2는? \n");
+		printf("\n");
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("답 : %lf", Vertical_upward_movement(cho));
+	}
+	else if (choice == 2) {
+
+		printf("\n");
+		printf("1. 수평 - 지면 도달 시간\n");
+		printf("2. 수평 - 수평 도달 거리\n");
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", parabolic_motion(cho));
+	}
+	else if (choice == 3) {
+
+		printf("\n");
+		printf("1. 관성력의 크기\n");
+		printf("2. 관성력의 방향\n");
+		printf("3. 버스의 가속도\n");
+
+		printf("\n");
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", inertial_force(cho));
+	}
+	else if (choice == 4) {
+
+		printf("\n");
+		printf("1. 열량\n");
+		printf("2. 고온의 물체에서 저온의 물체로 전도 되어진 열의 양\n");
+		printf("3. 열역학 제 1법칙\n");
+		printf("4. 기체분자가 한 일의 양\n");
+		printf("5. 기체분자의 내부에너지 변화량\n");
+		printf("\n");
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("답 : %lf", heat(cho));
+	}
+
+}
+
+//물리2 3단원
+void sub2_unit3() {
+	int choice;
+	int cho;
+
+	printf("\n");
+	printf("\n");
+	printf("======== 공식 선택 ========\n");
+	printf("\n");
+	printf("1. 파동의 성질과 중첩의 원리\n");
+	printf("2. 파동의 반사, 굴절, 회절과 간섭\n");
+	printf("3. 도플러 효과와 충격파\n");
+	printf("4. 거울과 렌즈\n");
+	printf("5. 전자기파, 레이저, 편광\n");
+	printf("\n");
+
+	printf("선택지를 고르시오 : ");
+	scanf_s("%d", &choice);
+
+	if (choice == 1) {
+		printf("1. 파동의 속도 (λ,T)\n");
+		printf("2. 파동의 속도 (f,λ)\n");
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", wave_of_principle(cho));
+	}
+	else if (choice == 2) {
+		printf("1. 상대 굴절률 (매질1에서 매질2로의 굴절률)\n");
+		printf("2. 절대 굴절률\n");
+		printf("3. 보강 간섭의 조건 (경로차)\n");
+		printf("4. 상쇄 간섭의 조건 (경로차)\n");
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", wave_rbdi(cho));
+	}
+     else if (choice == 3) {
+		printf("1. 도플러 효과 (음속 v는?)\n");
+		printf("2. 도플러 효과 (진동수 f는?)\n");
+		printf("3. 충격량 - Δp\n");
+		printf("3. 충격량 - mv - mv0\n");
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", doppler_I(cho));
+	}
+	else if (choice == 4) {
+		printf("1. 상의 위치\n");
+		printf("2. 배율\n");
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", mirror_lens(cho));
+	}
+	else if (choice == 5) {
+		printf("1. 편광\n");
+		printf("2. LC 진동회로\n");
+
+		printf("\n");
+
+		printf("선택지를 고르시오 : ");
+		scanf_s("%d", &cho);
+
+		printf("\n");
+		printf("답 : %lf", mirror_lens(cho));
+	}
 }
 
 //연직상방운동
@@ -335,147 +492,60 @@ double doppler_I(int cho) {
 
 }
 
-//물리2 1단원
-void sub2_unit1() {
-	int choice;
-	int cho;
+//거울과 렌즈
+double mirror_lens(int cho) {
+	double a, b, f;
 
-	printf("\n");
-	printf("\n");
-	printf("======== 공식 선택 ========\n");
-	printf("\n");
-	printf("1. 연직상방운동\n");
-	printf("2. 포물선 운동\n");
-	printf("3. 관성력\n");
-	printf("4. 열\n");
-	printf("\n");
-	printf("선택지를 고르시오 : ");
-	scanf_s("%d", &choice);
-
-	if (choice == 1) {
-
-		printf("1. V는? \n");
-		printf("2. S는? \n");
-		printf("3. V^2는? \n");
+	if (cho == 1) {
 		printf("\n");
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("답 : %lf", Vertical_upward_movement(cho));
-	}
-	else if (choice == 2) {
-
-		printf("\n");
-		printf("1. 수평 - 지면 도달 시간\n");
-		printf("2. 수평 - 수평 도달 거리\n");
-		printf("\n");
-
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("\n");
-		printf("답 : %lf", parabolic_motion(cho));
-	}
-	else if (choice == 3) {
-
-		printf("\n");
-		printf("1. 관성력의 크기\n");
-		printf("2. 관성력의 방향\n");
-		printf("3. 버스의 가속도\n");
-
-		printf("\n");
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("\n");
-		printf("답 : %lf", inertial_force(cho));
-	}
-	else if (choice == 4) {
-
-		printf("\n");
-		printf("1. 열량\n");
-		printf("2. 고온의 물체에서 저온의 물체로 전도 되어진 열의 양\n");
-		printf("3. 열역학 제 1법칙\n");
-		printf("4. 기체분자가 한 일의 양\n");
-		printf("5. 기체분자의 내부에너지 변화량\n");
-		printf("\n");
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("답 : %lf", heat(cho));
-	}
-
-}
-
-//물리2 3단원
-void sub2_unit3() {
-	int choice;
-	int cho;
-
-	printf("\n");
-	printf("\n");
-	printf("======== 공식 선택 ========\n");
-	printf("\n");
-	printf("1. 파동의 성질과 중첩의 원리\n");
-	printf("2. 파동의 반사, 굴절, 회절과 간섭\n");
-	printf("3. 도플러 효과와 충격파\n");
-	printf("4. 거울과 렌즈\n");
-	printf("5. 전자기파, 레이저, 편광\n");
-	printf("\n");
-
-	printf("선택지를 고르시오 : ");
-	scanf_s("%d", &choice);
-
-	if (choice == 1) {
-		printf("1. 파동의 속도 (λ,T)\n");
-		printf("2. 파동의 속도 (f,λ)\n");
-		printf("\n");
-
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("\n");
-		printf("답 : %lf", wave_of_principle(cho));
-	}
-	else if (choice == 2) {
-		printf("1. 상대 굴절률 (매질1에서 매질2로의 굴절률)\n");
-		printf("2. 절대 굴절률\n");
-		printf("3. 보강 간섭의 조건 (경로차)\n");
-		printf("4. 상쇄 간섭의 조건 (경로차)\n");
-		printf("\n");
-
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("\n");
-		printf("답 : %lf", wave_rbdi(cho));
-	}
-	else if (choice == 3) {
-		printf("1. 도플러 효과 (음속 v는?)\n");
-		printf("2. 도플러 효과 (진동수 f는?)\n");
-		printf("3. 충격량 - Δp\n");
-		printf("3. 충격량 - mv - mv0\n");
-
-
-		printf("선택지를 고르시오 : ");
-		scanf_s("%d", &cho);
-
-		printf("\n");
-		printf("답 : %lf", doppler_I(cho));
-	}
-
-}
-
-
-/*
-if (cho == 1) {
-printf(" 순으로 입력하시오 : ");
-scanf_s("%lf %lf", &, &);
-return ();
+		printf("1   1   1 \n");
+		printf("- + - = -  \n");
+		pritnf("a   b   f\n\n");
+		printf("a : 물체에서 거울까지의 거리 \n");
+		printf("b : 거울에서 상까지의 거리 (상이 거울앞에 있을때 (+),뒤에 있을 때 (-)), λ : 파장\n");
+		printf("f : 거울의 초점 거리\n\n");
+		printf("a, b 순으로 입력하시오 : ");
+		scanf_s("%lf %lf", &a, &b);
+		return ((1 / a) + (1 / b));
 	}
 	else if (cho == 2) {
-	printf(" 순으로 입력하시오 : ");
-	scanf_s("%lf %lf", &, &);
-	return ();
+		printf("\n");
+		printf("    b \n");
+		printf("m = -  \n");
+		pritnf("    a\n\n");
+		printf("a : 물체에서 거울까지의 거리 \n");
+		printf("b : 거울에서 상까지의 거리 (상이 거울앞에 있을때 (+),뒤에 있을 때 (-)), λ : 파장\n");
+		printf("f : 배율\n\n");
+		printf("a, b 순으로 입력하시오 : ");
+		scanf_s("%lf %lf", &a, &b);
+		return (b/a);
 	}
-	*/
+
+}
+
+
+//전자기파, 레이저, 편광
+double ew_l_p(int cho) {
+	double I0, θ, L, C;
+
+	if (cho == 1) {
+		printf("\n");
+		pritnf("I = I0cos²θ\n\n");
+		printf("I : 빛의 밝기, I0 : 초기 빛의 세기, θ : 초기 빛의 편광 방향과 편광판의 편광축 사이의 각의 크기\n\n");
+		printf("I0, θ 순으로 입력하시오 : ");
+		scanf_s("%lf %lf", &I0, &θ);
+		return (I0* cos(θ));
+	}
+	else if (cho == 2) {
+		printf("\n");
+		printf("        1\n");
+		printf("f = ---------\n");
+		pritnf("    2π√(LC)\n\n");
+		printf("f : 진동수, L : 코일, C : 축전기\n\n");
+		printf("L, C 순으로 입력하시오 : ");
+		scanf_s("%lf %lf", &L, &C);
+		return (2*M_PI*sqrt(L*C));
+	}
+
+}
+
